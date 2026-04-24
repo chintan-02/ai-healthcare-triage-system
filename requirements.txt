@@ -1,6 +1,6 @@
-flask
-flask-sqlalchemy
-werkzeug
+Flask
+Flask-SQLAlchemy
+Werkzeug
 scikit-learn
 pandas
 numpy
