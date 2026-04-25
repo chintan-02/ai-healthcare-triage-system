@@ -12,8 +12,6 @@
 👉 **Deployed on Azure App Service**
 🔗 https://ai-triage-chintan.azurewebsites.net
 
-> Replace with your actual link after deployment
-
 ---
 
 ## 👨‍💻 Author
