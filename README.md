@@ -1,236 +1,175 @@
-# 🚑 AI Healthcare Triage System (Priority Care)
+# 🚑 Legacy AI Healthcare Triage Prototype
+
+> [!IMPORTANT]
+> This repository is an archived learning prototype and is no longer actively maintained.
+>
+> Current development has moved to:
+> **[TriageAI — ESI Clinical Intake & Care Routing Assistant](https://github.com/chintan-02/triageai-esi-care-routing)**
+>
+> This project was created for educational and portfolio demonstration purposes only. It is not clinically validated, does not provide medical diagnosis, and must not be used for real patient-care decisions.
 
 <p align="center">
-  <b>End-to-End AI + Web Application for Patient Triage</b><br>
-  Classify patients into <b>RED, YELLOW, GREEN</b> using Machine Learning + Clinical Safety Rules.
+  <b>Early End-to-End Machine Learning and Flask Application</b><br>
+  Demonstrating RED, YELLOW, and GREEN priority classification using a Logistic Regression model and rule-based escalation.
 </p>
 
 ---
 
-## 🌐 Live Demo
+## Project Status
 
-👉 **Deployed on Azure App Service**
-🔗 https://ai-triage-chintan.azurewebsites.net
+- **Status:** Archived legacy prototype
+- **Original purpose:** Learning full-stack ML application development
+- **Current replacement:** [TriageAI ESI Care Routing](https://github.com/chintan-02/triageai-esi-care-routing)
+- **Clinical use:** Not permitted
+- **Maintenance:** No longer actively maintained
 
----
-
-## 👨‍💻 Author
-
-**Chintan Patel**
-🔗 GitHub: https://github.com/chintan-02
-💼 LinkedIn: https://www.linkedin.com/in/chintan-patel-987765129/
+This repository represents an earlier stage of my development before moving to a more structured React, FastAPI, LightGBM, database-backed, human-in-the-loop clinical decision-support workflow.
 
 ---
 
-## 📌 Project Overview
+## 🌐 Legacy Demonstration
 
-In emergency healthcare settings, **accurate patient prioritization is critical**.
+The original prototype was deployed using Azure App Service:
 
-👉 This project builds an **AI-powered triage system** that:
+**Legacy URL:**  
+https://ai-triage-chintan.azurewebsites.net
 
-* Predicts patient urgency level (**RED / YELLOW / GREEN**)
-* Uses **Machine Learning (Logistic Regression)**
-* Applies **clinical safety override rules**
-* Provides **confidence score + decision support**
-
-All presented through a **clean Flask-based dashboard UI**.
+> The deployment may be unavailable and does not represent the architecture, model, safety workflow, or interface of the current TriageAI project.
 
 ---
 
-## ✨ Key Features
+## Project Overview
 
-✅ Patient triage prediction (RED / YELLOW / GREEN)
-✅ Hybrid AI system (**ML + Safety Rules**)
-✅ Real-time prediction via Flask
-✅ Confidence score for decisions
-✅ Patient dashboard & history tracking
-✅ Analytics dashboard (triage distribution + trends)
-✅ CSV export functionality
-✅ Secure login system
+This prototype explores how a basic machine-learning model can be integrated into a web application for educational healthcare workflow demonstrations.
 
----
+The system:
 
-## 🧠 AI Approach
+- Accepts a small set of patient intake fields
+- Uses Logistic Regression to generate a RED, YELLOW, or GREEN priority classification
+- Applies rule-based escalation for selected high-risk inputs
+- Displays a confidence score and decision-support result
+- Stores demo patient records
+- Provides basic analytics and CSV export functionality
+- Uses a Flask-based user interface
 
-### 🔹 Machine Learning Model
-
-* Logistic Regression (scikit-learn)
-* Trained on:
-
-  * Age
-  * Pain Level
-  * Respiratory Rate
-  * Heart Rate
-  * Oxygen Saturation
-
-### 🔹 Safety Override Rules (Critical)
-
-These rules ensure **clinical reliability**:
-
-* Oxygen Saturation ≤ 90 → 🔴 RED
-* Pain ≥ 9 → 🔴 RED
-* Respiratory Rate ≥ 25 → 🔴 RED
-* Critical vitals → 🔴 RED
-
-👉 Ensures **no high-risk patient is misclassified**
+The RED, YELLOW, and GREEN labels are project-specific demonstration categories. They are not a validated implementation of CTAS, ESI, or another official clinical triage standard.
 
 ---
 
-## 🏗️ Architecture
+## Key Features
 
+- Patient priority classification using Logistic Regression
+- Rule-based escalation for selected vital-sign thresholds
+- Flask-based prediction workflow
+- Prediction confidence display
+- Demo patient history
+- Basic analytics dashboard
+- CSV export
+- Demonstration login workflow
+- Azure App Service deployment experience
+
+---
+
+## Machine-Learning Approach
+
+### Model
+
+The prototype uses a Logistic Regression model built with scikit-learn.
+
+Input features include:
+
+- Age
+- Pain level
+- Respiratory rate
+- Heart rate
+- Oxygen saturation
+
+### Rule-Based Escalation
+
+The application contains simple escalation rules for selected inputs, including:
+
+- Oxygen saturation at or below a configured threshold
+- High reported pain level
+- Elevated respiratory rate
+- Other configured critical-vital conditions
+
+These rules were created for workflow demonstration only.
+
+> Rule-based escalation does not guarantee clinical safety, prevent all misclassification, or replace professional assessment.
+
+---
+
+## High-Level Architecture
+
+```text
+Patient Input
+    ↓
+Input Validation
+    ↓
+Rule-Based Escalation
+    ↓
+Logistic Regression Model
+    ↓
+Priority Classification
+    ↓
+Flask Dashboard
 ```
-User Input → Safety Rules → ML Model → Prediction → UI Dashboard
-```
 
 ---
 
-## 📊 Screenshots
+## Screenshots
 
-### 🔐 Login Page
+### Login Page
 
 ![Login](screenshots/login.png)
 
----
-
-### 🖥️ Dashboard
+### Dashboard
 
 ![Dashboard](screenshots/dashboard.png)
 
----
-
-### 📋 Patient List
+### Patient List
 
 ![Patients](screenshots/patient_list.png)
 
----
-
-### 📊 Analytics
+### Analytics
 
 ![Analytics](screenshots/analytics.png)
 
----
-
-### 🔴 RED Case
+### RED Demonstration Case
 
 ![RED](screenshots/patient_red.png)
 
----
-
-### 🟡 YELLOW Case
+### YELLOW Demonstration Case
 
 ![YELLOW](screenshots/patient_yellow.png)
 
----
-
-### 🟢 GREEN Case
+### GREEN Demonstration Case
 
 ![GREEN](screenshots/patient_green.png)
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
-```
+```text
 prioritycare/
 │
-├── app.py              # Flask app + dashboard
-├── auth.py             # Authentication routes
-├── patients.py         # Patient CRUD + ML prediction
-├── analytics.py        # Analytics API + export
+├── app.py              # Flask application and dashboard
+├── auth.py             # Demonstration authentication routes
+├── patients.py         # Patient CRUD and prediction workflow
+├── analytics.py        # Analytics API and CSV export
 ├── models.py           # Database models
-├── config.py           # App configuration
-├── seed.py             # Database seeding
+├── config.py           # Application configuration
+├── seed.py             # Demo database seeding
 ├── requirements.txt
-├── Procfile            # Production server (gunicorn)
+├── Procfile            # Azure/Gunicorn deployment configuration
 │
 ├── ml/
-│   ├── predict.py      # ML + safety override logic
+│   ├── predict.py      # Model inference and escalation logic
 │   └── triage_model.pkl
 │
-├── templates/          # HTML pages
-├── static/             # CSS / JS
-├── notebooks/          # ML training notebook
-├── screenshots/        # UI images
+├── templates/          # Jinja HTML templates
+├── static/             # CSS and JavaScript
+├── notebooks/          # Model-development notebook
+└── screenshots/        # Application screenshots
 ```
----
-
-## ⚙️ Run Locally
-
-```bash
-git clone https://github.com/YOUR_USERNAME/ai-healthcare-triage-system.git
-cd ai-healthcare-triage-system
-
-python3 -m venv venv
-source venv/bin/activate
-
-pip install -r requirements.txt
-python seed.py
-flask run
-```
-
-👉 Open:
-
-```
-http://127.0.0.1:5000
-```
-
----
-
-## 🔐 Login Credentials
-
-```
-Email: nurse@example.com
-Password: password123
-```
-
----
-
-## ☁️ Azure Deployment
-
-This project is deployed using **Azure App Service (Linux)**.
-
-### 🔧 Startup Command
-
-```bash
-python seed.py && gunicorn --bind=0.0.0.0:8000 app:app
-```
-
-### ⚙️ Environment Variables
-
-| Variable     | Value                     |
-| ------------ | ------------------------- |
-| SECRET_KEY   | your-secret-key           |
-| FLASK_ENV    | production                |
-| DATABASE_URL | sqlite:///prioritycare.db |
-
----
-
-## 🚀 Future Improvements
-
-* Explainable AI (prediction reasoning)
-* Advanced models (Random Forest / XGBoost)
-* Real-time hospital integration API
-* Patient risk scoring system
-* Multi-user roles (Admin / Doctor / Nurse)
-
----
-
-## 📈 Why This Project Stands Out
-
-✔ End-to-end ML + Web integration
-✔ Real-world healthcare use case
-✔ Hybrid AI (ML + rule-based safety)
-✔ Cloud deployment (Azure)
-✔ Clean UI/UX + dashboard
-
----
-
-## ⭐ Final Note
-
-This project demonstrates how **AI can be safely applied in healthcare** by combining machine learning with rule-based safety mechanisms.
-
----
-
-<p align="center">
-  ⭐ If you like this project, give it a star on GitHub!
-</p>
